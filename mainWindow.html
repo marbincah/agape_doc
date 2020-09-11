@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dokumen Agape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Dokumen Agape</a>
+        </div>
+    </nav>
+    <div>
+        <button id="label">Label Resep</button>
+        <button id="card">Kartu Pasien</button>
+        <button id="docs">Lembar Rekam Medis</button>
+        <button id="certificate">Sertifikat</button>
+    </div>
+
+    <script>
+        const { BrowserWindow } = require('electron').remote;
+        const url = require('url');
+        const path = require('path');
+
+        const labelButton = document.getElementById("label");
+        labelButton.addEventListener('click', createLabelWindow);
+
+        
+        function createLabelWindow() {
+            labelWindow = new BrowserWindow({
+                width: 300,
+                height: 200,
+                title: 'Label Resep',
+                webPreferences: {
+                    nodeIntegration: true
+                }
+            });
+
+            labelWindow.loadURL(url.format({
+                pathname: path.join(__dirname, 'labelWindow.html'),
+                protocol: 'file:',
+                slashes: true
+            }));
+
+            labelWindow.on('close', function(){
+                labelWindow = null;
+            })
+        }
+    </script>
+</body>
+</html>

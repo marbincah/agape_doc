@@ -1,0 +1,22 @@
+{
+  "name": "agape_doc",
+  "version": "1.0.0",
+  "description": "Apps for create and print document of Apotek Gratia Plena Batam",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marbincah/agape_doc.git"
+  },
+  "author": "Maria Binar Cahyaningtyas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marbincah/agape_doc/issues"
+  },
+  "homepage": "https://github.com/marbincah/agape_doc#readme",
+  "dependencies": {
+    "electron": "^10.1.1"
+  }
+}
